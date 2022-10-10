@@ -1,9 +1,12 @@
 package com.miempresa.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +16,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.login_activity);
         Log.d("cicloVida","Estamos en estado onCreate");
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id==R.id.cambioContrasena){
+            Log.d("pruebaMenu", "Probo menu cambio contraseña");
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
