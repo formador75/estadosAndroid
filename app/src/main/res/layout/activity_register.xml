@@ -10,7 +10,8 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="irAtras"
         android:text="Atras"
-        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="262dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
