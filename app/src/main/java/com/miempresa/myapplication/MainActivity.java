@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
                contrasena = passWord.getText().toString();
                 Log.d("cicloVida",usuario);
                 Log.d("cicloVida",contrasena);
-               if (usuario.equals("jorge")){
-                   irRegistrarse();
+               if (usuario.equals("jorge") && contrasena.equals("123")){
+                   irRegistrarse(usuario,contrasena);
 
                    Log.d("cicloVida","el usuario ingreo con exito");
 
@@ -57,8 +57,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("cicloVida","Estamos probando el boton");
     }
 
-    public void irRegistrarse(){
+    public void irRegistrarse(String usuario, String password){
+
         Intent i = new Intent(this, RegisterActivity.class);
+        i.putExtra("usuario", usuario);
+        i.putExtra("password",password);
         startActivity(i);
 
 

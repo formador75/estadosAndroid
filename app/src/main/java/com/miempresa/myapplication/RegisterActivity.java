@@ -6,15 +6,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    TextView tvUsuario, tvPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        tvUsuario = findViewById(R.id.textView);
+        tvPassword = findViewById(R.id.textView2);
         Log.d("cicloVida","Estamos2 en estado onCreate");
-
+        Bundle datos = getIntent().getExtras();
+        String usuario = datos.getString("usuario");
+        String password = datos.getString("password");
+        tvUsuario.setText(usuario);
+        tvPassword.setText(password);
     }
 
     public void irAtras(View view){
