@@ -3,6 +3,7 @@ package com.miempresa.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button botonIngreso;
@@ -43,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
                    Log.d("cicloVida","el usuario ingreo con exito");
 
                }else{
-
+                   Context context = getApplicationContext();
+                   CharSequence texto = "El usuario o la contraseña estan equivocados";
+                   int duracion = Toast.LENGTH_SHORT;
+                   Toast toast = Toast.makeText(context,texto,duracion);
+                   toast.show();
                    Log.d("cicloVida","el usuario o la contraseña esta equivocada");
                }
 
@@ -52,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     public void probarBoton(){
         Log.d("cicloVida","Estamos probando el boton");
