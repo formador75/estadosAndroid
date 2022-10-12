@@ -3,6 +3,7 @@ package com.miempresa.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("cicloVida",usuario);
                 Log.d("cicloVida",contrasena);
                if (usuario.equals("jorge")){
+                   irRegistrarse();
 
                    Log.d("cicloVida","el usuario ingreo con exito");
 
@@ -55,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("cicloVida","Estamos probando el boton");
     }
 
-    public void irRegistrarse(View view){
+    public void irRegistrarse(){
+        Intent i = new Intent(this, RegisterActivity.class);
+        startActivity(i);
+
+
         Log.d("cicloVida","Estamos probando el boton 2");
     }
 
